@@ -1,0 +1,110 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "vcc-time-wizard",
+  "title": "VCC Time Wizard",
+  "version": "1.0.0",
+  "description": "Copy formatted times for Spain, Argentina, and Canary Islands to clipboard",
+  "icon": "command-icon.svg",
+  "author": "dlorenzo",
+  "license": "MIT",
+  "commands": [
+    {
+      "name": "copy-times",
+      "title": "Copy Team Times",
+      "description": "Copy current times for configured timezones to clipboard",
+      "mode": "no-view"
+    },
+    {
+      "name": "convert-time",
+      "title": "Convert Time",
+      "description": "Convert a specific time to all configured timezones",
+      "mode": "no-view",
+      "arguments": [
+        {
+          "name": "time",
+          "placeholder": "HH:MM",
+          "type": "text",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "convert-datetime",
+      "title": "Convert Date & Time",
+      "description": "Convert a specific date and time to all configured timezones",
+      "mode": "no-view",
+      "arguments": [
+        {
+          "name": "datetime",
+          "placeholder": "DD/MM HH:MM",
+          "type": "text",
+          "required": true
+        }
+      ]
+    }
+  ],
+  "preferences": [
+    {
+      "name": "timezone1",
+      "title": "Timezone 1",
+      "description": "First timezone (e.g., Europe/Madrid)",
+      "type": "textfield",
+      "default": "Europe/Madrid",
+      "required": true
+    },
+    {
+      "name": "emoji1",
+      "title": "Emoji 1",
+      "description": "Emoji for first timezone",
+      "type": "textfield",
+      "default": "🇪🇸",
+      "required": true
+    },
+    {
+      "name": "timezone2",
+      "title": "Timezone 2",
+      "description": "Second timezone (e.g., America/Argentina/Buenos_Aires)",
+      "type": "textfield",
+      "default": "America/Argentina/Buenos_Aires",
+      "required": true
+    },
+    {
+      "name": "emoji2",
+      "title": "Emoji 2",
+      "description": "Emoji for second timezone",
+      "type": "textfield",
+      "default": "🇦🇷",
+      "required": true
+    },
+    {
+      "name": "timezone3",
+      "title": "Timezone 3",
+      "description": "Third timezone (e.g., Atlantic/Canary)",
+      "type": "textfield",
+      "default": "Atlantic/Canary",
+      "required": true
+    },
+    {
+      "name": "emoji3",
+      "title": "Emoji 3",
+      "description": "Emoji for third timezone",
+      "type": "textfield",
+      "default": "🇮🇨",
+      "required": true
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.104.5"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "^2.1.1",
+    "@types/node": "^25.2.3",
+    "typescript": "^5.9.3"
+  },
+  "scripts": {
+    "build": "ray build --skip-types -e dist -o dist",
+    "dev": "ray develop",
+    "fix-lint": "ray lint --fix",
+    "lint": "ray lint"
+  }
+}
