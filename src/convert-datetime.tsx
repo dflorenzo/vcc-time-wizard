@@ -52,7 +52,7 @@ export default async function Command(props: LaunchProps<{ arguments: Arguments 
       minute: "2-digit",
       hour12: false,
     });
-    return `${emoji} ${timeStr}`;
+    return `${emoji} ${timeStr}h`;
   };
 
   const times = [

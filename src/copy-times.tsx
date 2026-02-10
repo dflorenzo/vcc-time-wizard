@@ -21,7 +21,7 @@ export default async function Command() {
       minute: "2-digit",
       hour12: false,
     });
-    return `${emoji} ${time}`;
+    return `${emoji} ${time}h`;
   };
 
   const times = [
