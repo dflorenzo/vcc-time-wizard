@@ -1,4 +1,4 @@
-import { Clipboard, showHUD, getPreferenceValues } from "@raycast/api";
+import { Clipboard, showHUD, getPreferenceValues, updateCommandMetadata, environment, LaunchType } from "@raycast/api";
 
 interface Preferences {
   timezone1: string;
@@ -32,13 +32,12 @@ export default async function Command() {
 
   const text = times.join(" | ");
 
+  // Update the command subtitle to show the times
   await updateCommandMetadata({ subtitle: text });
 
+  // Only copy to clipboard when user explicitly runs the command
   if (environment.launchType === LaunchType.UserInitiated) {
     await Clipboard.copy(text);
     await showHUD("Times copied to clipboard! 📋");
   }
-
-  await Clipboard.copy(text);
-  await showHUD("Times copied to clipboard! 📋");
 }
