@@ -32,6 +32,13 @@ export default async function Command() {
 
   const text = times.join(" | ");
 
+  await updateCommandMetadata({ subtitle: text });
+
+  if (environment.launchType === LaunchType.UserInitiated) {
+    await Clipboard.copy(text);
+    await showHUD("Times copied to clipboard! 📋");
+  }
+
   await Clipboard.copy(text);
   await showHUD("Times copied to clipboard! 📋");
 }

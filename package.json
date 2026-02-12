@@ -12,6 +12,7 @@
       "name": "copy-times",
       "title": "Copy Team Times",
       "description": "Copy current times for configured timezones to clipboard",
+      "interval": "1m",
       "mode": "no-view"
     },
     {

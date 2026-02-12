@@ -44,7 +44,7 @@ declare namespace Arguments {
 }
   /** Arguments passed to the `convert-datetime` command */
   export type ConvertDatetime = {
-  /** YYYY-MM-DD HH:MM */
+  /** DD/MM HH:MM */
   "datetime": string
 }
 }
