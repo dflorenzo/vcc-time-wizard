@@ -32,7 +32,7 @@ export default async function Command() {
 
   const text = times.join(" | ");
 
-  // Update the command subtitle to show the times
+  // Update the subtitle for display in Raycast command list
   await updateCommandMetadata({ subtitle: text });
 
   // Only copy to clipboard when user explicitly runs the command
